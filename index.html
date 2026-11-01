@@ -1,24 +1,23 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="it">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Where Did the Leaves Go?</title>
+  <title>Avatar Franchise Shrine - Cosmic-S</title>
+  <link rel="icon" type="image/png" href="https://cosmic-seea.neocities.org/stamp-5.png">
   
-  <!-- FAVICON & FONTS -->
-  <link rel="icon" type="image/png" href="https://raw.githubusercontent.com/Seea-Star/Howl/refs/heads/main/stamp-5.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@600;700;800&display=swap" rel="stylesheet">
 
   <style>
-    * { 
-      box-sizing: border-box; 
-      margin: 0; 
-      padding: 0; 
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    /* SFONDO TEMA PERGAMENA ANTICA CON GRIGLIA MORBIDA INCHIOSTRO */
+    html {
+      scroll-behavior: smooth;
     }
 
-    /* SFONDO VERDE SALVIA PALLIDO CON GRIGLIA CHIARA */
     body {
       width: 100%;
       min-height: 100vh;
@@ -29,10 +28,9 @@
       display: flex;
       justify-content: center;
       position: relative;
-      background: #e3fce3;
+      background: linear-gradient(to bottom, #ded2b9 0%, #cbb998 50%, #b8a37f 100%);
     }
 
-    /* Trama a griglia sottile sullo sfondo */
     body::before {
       content: "";
       position: fixed;
@@ -41,15 +39,15 @@
       width: 100%;
       height: 100%;
       background-image: 
-        linear-gradient(rgba(0, 0, 0, 0.05) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(0, 0, 0, 0.05) 1px, transparent 1px);
+        linear-gradient(rgba(45, 30, 15, 0.08) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(45, 30, 15, 0.08) 1px, transparent 1px);
       background-size: 25px 25px;
       pointer-events: none;
       z-index: 0;
     }
 
     .site-wrapper {
-      max-width: 800px;
+      max-width: 950px;
       width: 100%;
       display: flex;
       flex-direction: column;
@@ -58,7 +56,7 @@
       z-index: 1;
     }
 
-    /* 1. LOGO PRINCIPALE IN ALTO */
+    /* LOGO PRINCIPALE IN ALTO */
     .top-banner {
       display: flex;
       justify-content: center;
@@ -67,8 +65,8 @@
     }
 
     .top-banner img.logo-img {
-      max-width: 100%;
-      width: 450px;
+      max-width: 440px;
+      width: 100%;
       height: auto;
       display: block;
       filter: drop-shadow(3px 3px 0px #111111);
@@ -76,12 +74,201 @@
     }
 
     .top-banner img.logo-img:hover {
-      transform: scale(1.02);
+      transform: scale(1.03);
     }
 
-    /* BLOCCHI DI TESTO / DIARIO CON EFFETTO HOVER */
+    /* HEADER SUPERIORE: PLAYER + 3 COPERTINE CLICCABILI */
+    .header-top-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 20px;
+      align-items: center;
+    }
+
+    @media screen and (min-width: 768px) {
+      .header-top-grid {
+        grid-template-columns: 320px 1fr;
+        gap: 25px;
+      }
+    }
+
+    /* PLAYER MUSICALE COSMIC STYLE (Stesso della pagina Howl) */
+    .cosmic-player {
+      background: url('https://raw.githubusercontent.com/Seea-Star/Howl/refs/heads/main/c14b6fdbee2490ed3ff5a726d32d749f.gif') center/cover no-repeat;
+      border: 3px solid #111111;
+      border-radius: 14px;
+      box-shadow: 5px 5px 0px #111111;
+      width: 100%;
+      max-width: 320px;
+      margin: 0 auto;
+      position: relative;
+      overflow: hidden;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .cosmic-player:hover {
+      transform: translateY(-5px) rotate(1deg);
+      box-shadow: 8px 8px 0px #111111;
+    }
+
+    .cosmic-player-inner {
+      background: rgba(0, 0, 0, 0.45);
+      backdrop-filter: blur(2px);
+      padding: 16px 20px;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      align-items: center;
+      justify-content: center;
+      width: 100%;
+      height: 100%;
+    }
+
+    .player-screen {
+      font-size: 0.8rem;
+      font-weight: 800;
+      letter-spacing: 0.5px;
+      color: #ffffff;
+      text-align: center;
+      border-bottom: 1px dashed rgba(255,255,255,0.4);
+      padding-bottom: 6px;
+      width: 100%;
+      text-shadow: 1px 1px 3px #000;
+    }
+
+    .player-controls {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .player-btn {
+      background: #ffffff;
+      color: #111111;
+      border: 2px solid #111;
+      border-radius: 50%;
+      width: 38px;
+      height: 38px;
+      font-weight: 800;
+      font-size: 1rem;
+      cursor: pointer;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      box-shadow: 2px 2px 0px #111;
+      transition: transform 0.15s ease, background 0.2s ease;
+    }
+
+    .player-btn:hover {
+      transform: scale(1.12);
+      background: #fcf8ee;
+    }
+
+    /* LE TRE COPERTINE CLICCABILI DI ANCORAGGIO */
+    .series-covers-container {
+      background: #fbf5e6;
+      border: 3px solid #111111;
+      border-radius: 14px;
+      padding: 15px;
+      box-shadow: 5px 5px 0px #111111;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .series-covers-title {
+      font-size: 0.85rem;
+      font-weight: 800;
+      text-align: center;
+      text-transform: uppercase;
+    }
+
+    .series-covers-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 12px;
+    }
+
+    .cover-link {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-decoration: none;
+      gap: 6px;
+      transition: transform 0.2s ease;
+    }
+
+    .cover-link:hover {
+      transform: translateY(-4px) scale(1.03);
+    }
+
+    .cover-box {
+      width: 100%;
+      aspect-ratio: 3/4;
+      background: #fff;
+      border: 3px solid #111;
+      border-radius: 10px;
+      box-shadow: 3px 3px 0px #111;
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .cover-box img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .cover-label {
+      background: #ffffff;
+      border: 2px solid #111;
+      border-radius: 6px;
+      padding: 3px 6px;
+      font-size: 0.7rem;
+      font-weight: 800;
+      color: #111;
+      box-shadow: 2px 2px 0px #111;
+      text-align: center;
+      width: 100%;
+    }
+
+    /* BLOCCHI DI TESTO STILE CARTA ANTICA */
     .diary-paper {
-      background: #fcfcf8;
+      background: #fbf5e6;
+      border: 3px solid #111111;
+      border-radius: 14px;
+      padding: 22px 25px;
+      box-shadow: 5px 5px 0px #111111;
+      position: relative;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .diary-paper:hover {
+      transform: translateY(-5px) scale(1.01);
+      box-shadow: 8px 8px 0px #111111;
+    }
+
+    .diary-paper h2 {
+      font-size: 1.2rem;
+      font-weight: 800;
+      margin-bottom: 10px;
+      color: #111111;
+      border-bottom: 2px dashed #111111;
+      padding-bottom: 5px;
+    }
+
+    .diary-paper p {
+      font-size: 0.9rem;
+      font-weight: 700;
+      line-height: 1.7;
+      color: #222222;
+    }
+
+    /* SEZIONE PERSONAGGI */
+    .characters-section {
+      background: #fbf5e6;
       border: 3px solid #111111;
       border-radius: 14px;
       padding: 22px 25px;
@@ -89,107 +276,155 @@
       transition: transform 0.3s ease, box-shadow 0.3s ease;
     }
 
-    .diary-paper:hover {
+    .characters-section:hover {
       transform: translateY(-4px);
       box-shadow: 8px 8px 0px #111111;
     }
 
-    .diary-paper p {
-      font-size: 0.95rem;
-      font-weight: 700;
-      line-height: 1.7;
-      color: #222222;
+    .characters-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+      gap: 12px;
+      margin-top: 15px;
     }
 
-    /* 2. WIDGET DI SCRATCH SENZA CORNICE */
-    .scratch-container {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      width: 100%;
-    }
-
-    .scratch-wrapper {
-      position: relative;
-      width: 100%;
-      max-width: 485px;
-      aspect-ratio: 485 / 402;
-      overflow: hidden;
-    }
-
-    .scratch-iframe {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      border: none;
-    }
-
-    /* 4. WIDGET STILE SMARTPHONE SLANCIATO (PIÙ ALTO) */
-    .phone-container {
-      width: 100%;
-      max-width: 340px;
-      height: 680px; /* Aumentato per renderlo più slanciato e realistico */
-      margin: 0 auto;
-      background: #111111;
-      border: 4px solid #111111;
-      border-radius: 36px;
-      padding: 12px;
-      box-shadow: 6px 6px 0px rgba(0, 0, 0, 0.2);
+    .character-card {
       display: flex;
       flex-direction: column;
+      gap: 6px;
       align-items: center;
+      transition: transform 0.2s ease;
+    }
+
+    .character-card:hover {
+      transform: translateY(-4px) scale(1.05);
+    }
+
+    .char-img-box {
+      background: #ffffff;
+      border: 3px solid #111111;
+      border-radius: 12px;
+      width: 100%;
+      max-width: 110px;
+      box-shadow: 3px 3px 0px #111111;
+      overflow: hidden;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      aspect-ratio: 1/1;
+    }
+
+    .char-img-box img {
+      width: 100%;
+      height: 100%;
+      display: block;
+      object-fit: cover;
+    }
+
+    .char-name-box {
+      background: #ffffff;
+      border: 2px solid #111111;
+      border-radius: 8px;
+      padding: 4px 8px;
+      text-align: center;
+      font-size: 0.75rem;
+      font-weight: 800;
+      color: #111;
+      box-shadow: 2px 2px 0px #111;
+      width: 100%;
+    }
+
+    /* GRIGLIA PRINCIPALE SCRAPBOOK */
+    .scrapbook-container {
+      display: flex;
+      flex-direction: column;
+      gap: 30px;
+      padding: 10px 0;
+    }
+
+    /* SEZIONE A DUE COLONNE (COPERTINA + STORIA O VIDEO) */
+    .middle-section-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 25px;
+      align-items: start;
+    }
+
+    @media screen and (min-width: 768px) {
+      .middle-section-grid {
+        grid-template-columns: 280px 1fr;
+      }
+    }
+
+    /* IMMAGINI CON BORDO STILE SCRAPBOOK */
+    .scrapbook-element {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 100%;
+      transition: transform 0.3s ease;
+    }
+
+    .scrapbook-element:hover {
+      transform: translateY(-6px) scale(1.02);
+    }
+
+    .scrapbook-element img {
+      border: 3px solid #111111;
+      border-radius: 14px;
+      box-shadow: 4px 4px 0px #111111;
+      width: 100%;
+      height: auto;
+      display: block;
+      background: #ffffff;
+      transition: box-shadow 0.3s ease;
+    }
+
+    .scrapbook-element:hover img {
+      box-shadow: 7px 7px 0px #111111;
+    }
+
+    /* CONTENITORE VIDEO/TRAILER YOUTUBE RESPONSIVE */
+    .video-box {
+      background: #ffffff;
+      border: 3px solid #111111;
+      border-radius: 14px;
+      box-shadow: 5px 5px 0px #111111;
+      overflow: hidden;
+      width: 100%;
+      aspect-ratio: 16/9;
       position: relative;
     }
 
-    .phone-notch {
-      width: 100px;
-      height: 14px;
-      background: #111111;
-      border-bottom-left-radius: 10px;
-      border-bottom-right-radius: 10px;
-      margin-bottom: 8px;
-      z-index: 2;
-    }
-
-    .phone-screen {
-      width: 100%;
-      height: 100%;
-      background: #ffffff;
-      border-radius: 24px;
-      overflow: hidden;
-      border: 2px solid #222222;
-    }
-
-    .phone-screen iframe {
+    .video-box iframe {
       width: 100%;
       height: 100%;
       border: none;
     }
 
-    /* 6. IMMAGINE DELLA STANZA (SENZA ALCUN BORDO O OMBRA) */
-    .room-container {
-      display: flex;
-      justify-content: center;
+    /* GALLERIA IN BASSO (4 COLONNE) */
+    .bottom-gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 15px;
       align-items: center;
-      width: 100%;
     }
 
-    .room-container img {
-      max-width: 100%;
-      height: auto;
-      display: block;
-      border: none !important;
-      box-shadow: none !important;
-      background: transparent !important;
-      border-radius: 0 !important;
+    @media screen and (min-width: 768px) {
+      .bottom-gallery-grid {
+        grid-template-columns: repeat(4, 1fr);
+        gap: 20px;
+      }
     }
 
-    /* 7. PULSANTE PER IL CAPITOLO SUCCESSIVO */
-    .next-btn {
+    /* ROTAZIONI CASUALI SCRAPBOOK */
+    .rot-left { transform: rotate(-1.5deg); }
+    .rot-right { transform: rotate(1.5deg); }
+
+    /* BOTTONE IN BASSO */
+    .back-btn {
       display: inline-block;
-      background: #ffffff;
+      background: #fbf5e6;
       color: #111111;
       padding: 12px 22px;
       border-radius: 14px;
@@ -204,22 +439,9 @@
       transition: transform 0.2s ease, box-shadow 0.2s ease;
     }
 
-    .next-btn:hover {
+    .back-btn:hover {
       transform: translateY(-3px);
       box-shadow: 6px 6px 0px #111;
-    }
-
-    /* MEDIA QUERY PER SCHERMI STRETTI */
-    @media (max-width: 480px) {
-      body {
-        padding: 20px 10px;
-      }
-      .diary-paper {
-        padding: 16px 18px;
-      }
-      .phone-container {
-        height: 620px; /* Adattato anche per mobile ma mantenendo l'aspetto slanciato */
-      }
     }
   </style>
 </head>
@@ -227,43 +449,222 @@
 
   <div class="site-wrapper">
 
-    <!-- 1. LOGO PRINCIPALE -->
+    <!-- 1. LOGO PRINCIPALE AVATAR -->
     <header class="top-banner">
-      <img src="Logo.png" alt="Where Did the Leaves Go?" class="logo-img" onerror="this.parentElement.innerHTML='<h1 style=\'font-size:1.8rem; font-weight:800; text-align:center;\'>Where Did the Leaves Go?</h1>'">
+      <img src="https://raw.githubusercontent.com/Seea-Star/Howl/refs/heads/main/howl-logo.png" alt="Avatar Franchise Logo" class="logo-img" onerror="this.src='https://via.placeholder.com/440x120?text=AVATAR+SHRINE'">
     </header>
 
-    <!-- 2. WIDGET DI SCRATCH SENZA CORNICE -->
-    <div class="scratch-container">
-      <div class="scratch-wrapper">
-        <iframe src="https://scratch.mit.edu/projects/1395312417/embed" class="scratch-iframe" allowtransparency="true" frameborder="0" scrolling="no" allowfullscreen></iframe>
+    <!-- 2. SEZIONE SUPERIORE: PLAYER MUSICALE + TRE COPERTINE CLICCABILI -->
+    <div class="header-top-grid">
+      
+      <!-- Player Musicale Stile Cosmic-S -->
+      <div class="cosmic-player rot-left">
+        <div class="cosmic-player-inner">
+          <div class="player-screen">Avatar Soundtrack</div>
+          <div class="player-controls">
+            <button class="player-btn" title="Play/Pause" onclick="let a=document.getElementById('bg-audio'); a.paused ? a.play() : a.pause();">♫</button>
+          </div>
+        </div>
+        <audio id="bg-audio" loop>
+          <source src="https://raw.githubusercontent.com/Seea-Star/Howl/refs/heads/main/Joe%20Hisaishi%20-%20Merry-Go-Round%20of%20Life%20(from%20Howl%E2%80%99s%20Moving%20Castle).mp3" type="audio/mpeg">
+        </audio>
       </div>
-    </div>
 
-    <!-- 3. PRIMO BLOCCO DI TESTO -->
-    <div class="diary-paper">
-      <p>I was just lying in my room, exhausted after a long day at school, when the news ticker suddenly flashed across the screen. They claimed entire sections of the northern forest were simply... gone. It has to be a glitch, right? Things like this don't just happen out of nowhere...</p>
-    </div>
+      <!-- 3 Copertine Cliccabili per scorrere ai capitoli -->
+      <div class="series-covers-container rot-right">
+        <div class="series-covers-title">Sfoglia le Serie</div>
+        <div class="series-covers-grid">
+          
+          <a href="#aang-series" class="cover-link">
+            <div class="cover-box">
+              <img src="aang-cover.jpg" alt="The Last Airbender" onerror="this.parentElement.innerHTML='<div style=\'padding:5px; font-weight:800; font-size:0.7rem;\'>AANG</div>'">
+            </div>
+            <div class="cover-label">Aang</div>
+          </a>
 
-    <!-- 4. TELEFONO SCROLLABILE PER I POST (ORA PIÙ ALTO E SLANCIATO) -->
-    <div class="phone-container">
-      <div class="phone-notch"></div>
-      <div class="phone-screen">
-        <iframe src="posts.html" title="Social Feed"></iframe>
+          <a href="#korra-series" class="cover-link">
+            <div class="cover-box">
+              <img src="korra-cover.jpg" alt="The Legend of Korra" onerror="this.parentElement.innerHTML='<div style=\'padding:5px; font-weight:800; font-size:0.7rem;\'>KORRA</div>'">
+            </div>
+            <div class="cover-label">Korra</div>
+          </a>
+
+          <a href="#seven-havens-series" class="cover-link">
+            <div class="cover-box">
+              <img src="seven-havens-cover.jpg" alt="Seven Havens" onerror="this.parentElement.innerHTML='<div style=\'padding:5px; font-weight:800; font-size:0.7rem;\'>7 HAVENS</div>'">
+            </div>
+            <div class="cover-label">Seven Havens</div>
+          </a>
+
+        </div>
       </div>
+
     </div>
 
-    <!-- 5. SECONDO BLOCCO DI TESTO -->
-    <div class="diary-paper">
-      <p>Nobody seems to know what's really going on. My friends in the chat are panicking, but some people online are saying it's all fake news. Then I noticed something strange right outside my own window... something green that definitely shouldn't be there.</p>
+    <div class="scrapbook-container">
+
+      <!-- 3. INFORMAZIONI GENERALI / INTRODUZIONE -->
+      <div class="diary-paper rot-left">
+        <h2>Benvenuti nell'Universo di Avatar ✨</h2>
+        <p>Creato da <strong>Michael Dante DiMartino</strong> e <strong>Bryan Konietzko</strong>, l'universo di Avatar racconta le avventure dell'Avatar, l'unico individuo capace di padroneggiare tutti e quattro gli elementi (Acqua, Terra, Fuoco, Aria) per mantenere l'equilibrio nel mondo.</p>
+      </div>
+
+      <!-- ================= 4. PRIMA SERIE: AANG ================= -->
+      <div id="aang-series" style="scroll-margin-top: 20px;"></div>
+      
+      <div class="middle-section-grid">
+        <div class="scrapbook-element rot-left">
+          <img src="aang-poster.jpg" alt="Avatar: La leggenda di Aang" onerror="this.parentElement.innerHTML='<div style=\'background:#fff; border:3px solid #111; padding:40px 10px; border-radius:14px; font-weight:bold; text-align:center;\'>📜 Copertina Aang</div>'">
+        </div>
+        <div class="diary-paper rot-right">
+          <h2>1. Avatar: La Leggenda di Aang</h2>
+          <p>La storia segue il giovane Aang, l'ultimo Dominatore dell'Aria rimasto, risvegliatosi dopo un sonno di cento anni in un iceberg. Insieme a Katara e Sokka, parte per un viaggio attraverso le nazioni per imparare gli elementi e sconfiggere la Nazione del Fuoco.</p>
+        </div>
+      </div>
+
+      <!-- Trailer Video YouTube Aang -->
+      <div class="video-box rot-left">
+        <iframe src="https://www.youtube.com/embed/d1EnW4kn1gg" title="Aang Trailer" allowfullscreen></iframe>
+      </div>
+
+      <!-- Personaggi Aang -->
+      <div class="characters-section rot-right">
+        <p style="font-size: 0.95rem; font-weight: 800; color: #222; margin-bottom: 5px;">Personaggi Principali (Aang):</p>
+        <div class="characters-grid">
+          <div class="character-card">
+            <div class="char-img-box"><img src="aang-head.jpg" alt="Aang" onerror="this.parentElement.innerText='Aang'"></div>
+            <div class="char-name-box">Aang</div>
+          </div>
+          <div class="character-card">
+            <div class="char-img-box"><img src="katara-head.jpg" alt="Katara" onerror="this.parentElement.innerText='Katara'"></div>
+            <div class="char-name-box">Katara</div>
+          </div>
+          <div class="character-card">
+            <div class="char-img-box"><img src="sokka-head.jpg" alt="Sokka" onerror="this.parentElement.innerText='Sokka'"></div>
+            <div class="char-name-box">Sokka</div>
+          </div>
+          <div class="character-card">
+            <div class="char-img-box"><img src="toph-head.jpg" alt="Toph" onerror="this.parentElement.innerText='Toph'"></div>
+            <div class="char-name-box">Toph</div>
+          </div>
+          <div class="character-card">
+            <div class="char-img-box"><img src="zuko-head.jpg" alt="Zuko" onerror="this.parentElement.innerText='Zuko'"></div>
+            <div class="char-name-box">Zuko</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ================= 5. SECONDA SERIE: KORRA ================= -->
+      <div id="korra-series" style="scroll-margin-top: 20px;"></div>
+
+      <div class="middle-section-grid">
+        <div class="scrapbook-element rot-right">
+          <img src="korra-poster.jpg" alt="La leggenda di Korra" onerror="this.parentElement.innerHTML='<div style=\'background:#fff; border:3px solid #111; padding:40px 10px; border-radius:14px; font-weight:bold; text-align:center;\'>📜 Copertina Korra</div>'">
+        </div>
+        <div class="diary-paper rot-left">
+          <h2>2. La Leggenda di Korra</h2>
+          <p>Ambientato settant'anni dopo le vicende di Aang, seguiamo Korra, una tenace ragazza della Tribù dell'Acqua del Sud. In una Repubblica Città ormai modernizzata, Korra affronta sfide politiche, spirituali e nuovi potenti avversari.</p>
+        </div>
+      </div>
+
+      <!-- Trailer Video YouTube Korra -->
+      <div class="video-box rot-right">
+        <iframe src="https://www.youtube.com/embed/jmsT63bgFP8" title="Korra Trailer" allowfullscreen></iframe>
+      </div>
+
+      <!-- Personaggi Korra -->
+      <div class="characters-section rot-left">
+        <p style="font-size: 0.95rem; font-weight: 800; color: #222; margin-bottom: 5px;">Personaggi Principali (Korra):</p>
+        <div class="characters-grid">
+          <div class="character-card">
+            <div class="char-img-box"><img src="korra-head.jpg" alt="Korra" onerror="this.parentElement.innerText='Korra'"></div>
+            <div class="char-name-box">Korra</div>
+          </div>
+          <div class="character-card">
+            <div class="char-img-box"><img src="mako-head.jpg" alt="Mako" onerror="this.parentElement.innerText='Mako'"></div>
+            <div class="char-name-box">Mako</div>
+          </div>
+          <div class="character-card">
+            <div class="char-img-box"><img src="bolin-head.jpg" alt="Bolin" onerror="this.parentElement.innerText='Bolin'"></div>
+            <div class="char-name-box">Bolin</div>
+          </div>
+          <div class="character-card">
+            <div class="char-img-box"><img src="asami-head.jpg" alt="Asami" onerror="this.parentElement.innerText='Asami'"></div>
+            <div class="char-name-box">Asami</div>
+          </div>
+          <div class="character-card">
+            <div class="char-img-box"><img src="tenzin-head.jpg" alt="Tenzin" onerror="this.parentElement.innerText='Tenzin'"></div>
+            <div class="char-name-box">Tenzin</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ================= 6. TERZA SERIE: SEVEN HAVENS ================= -->
+      <div id="seven-havens-series" style="scroll-margin-top: 20px;"></div>
+
+      <div class="middle-section-grid">
+        <div class="scrapbook-element rot-left">
+          <img src="seven-havens-poster.jpg" alt="Seven Havens" onerror="this.parentElement.innerHTML='<div style=\'background:#fff; border:3px solid #111; padding:40px 10px; border-radius:14px; font-weight:bold; text-align:center;\'>📜 Copertina Seven Havens</div>'">
+        </div>
+        <div class="diary-paper rot-right">
+          <h2>3. Avatar: Seven Havens</h2>
+          <p>Un capitolo di nuova generazione ambientato in un'era diversa dove la storia delle gemelle Pavi e Lisha intreccia il destino del mondo degli elementi con nuovi personaggi ed eroi come Daemin, Jae, Uki e Lan.</p>
+        </div>
+      </div>
+
+      <!-- Trailer Video YouTube Seven Havens -->
+      <div class="video-box rot-left">
+        <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ" title="Seven Havens Trailer" allowfullscreen></iframe>
+      </div>
+
+      <!-- Personaggi Seven Havens -->
+      <div class="characters-section rot-right">
+        <p style="font-size: 0.95rem; font-weight: 800; color: #222; margin-bottom: 5px;">Personaggi Principali (Seven Havens):</p>
+        <div class="characters-grid">
+          <div class="character-card">
+            <div class="char-img-box"><img src="daemin-head.jpg" alt="Daemin" onerror="this.parentElement.innerText='Daemin'"></div>
+            <div class="char-name-box">Daemin</div>
+          </div>
+          <div class="character-card">
+            <div class="char-img-box"><img src="jae-head.jpg" alt="Jae" onerror="this.parentElement.innerText='Jae'"></div>
+            <div class="char-name-box">Jae</div>
+          </div>
+          <div class="character-card">
+            <div class="char-img-box"><img src="uki-head.jpg" alt="Uki" onerror="this.parentElement.innerText='Uki'"></div>
+            <div class="char-name-box">Uki</div>
+          </div>
+          <div class="character-card">
+            <div class="char-img-box"><img src="lan-head.jpg" alt="Lan" onerror="this.parentElement.innerText='Lan'"></div>
+            <div class="char-name-box">Lan</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ================= 7. GALLERIA ARTE & FANART ================= -->
+      <div class="diary-paper rot-left">
+        <h2>Galleria d'Arte & Fanart 🎨</h2>
+        <p>Una raccolta di illustrazioni, bozzetti e fan art dedicate all'universo di Avatar.</p>
+      </div>
+
+      <div class="bottom-gallery-grid">
+        <div class="scrapbook-element rot-left">
+          <img src="art-1.jpg" alt="Art 1" onerror="this.parentElement.innerHTML='<div style=\'background:#fff; border:3px solid #111; padding:20px; border-radius:12px; font-weight:bold; font-size:0.75rem;\'>🎨 Art 1</div>'">
+        </div>
+        <div class="scrapbook-element rot-right">
+          <img src="art-2.jpg" alt="Art 2" onerror="this.parentElement.innerHTML='<div style=\'background:#fff; border:3px solid #111; padding:20px; border-radius:12px; font-weight:bold; font-size:0.75rem;\'>🎨 Art 2</div>'">
+        </div>
+        <div class="scrapbook-element rot-left">
+          <img src="art-3.jpg" alt="Art 3" onerror="this.parentElement.innerHTML='<div style=\'background:#fff; border:3px solid #111; padding:20px; border-radius:12px; font-weight:bold; font-size:0.75rem;\'>🎨 Art 3</div>'">
+        </div>
+        <div class="scrapbook-element rot-right">
+          <img src="art-4.jpg" alt="Art 4" onerror="this.parentElement.innerHTML='<div style=\'background:#fff; border:3px solid #111; padding:20px; border-radius:12px; font-weight:bold; font-size:0.75rem;\'>🎨 Art 4</div>'">
+        </div>
+      </div>
+
     </div>
 
-    <!-- 6. IMMAGINE DELLA STANZA (SENZA ALCUN BORDO O OMBRA) -->
-    <div class="room-container">
-      <img src="Room.png" alt="Tired in the Room" onerror="this.parentElement.innerHTML='<div style=\'padding:20px; font-weight:bold; text-align:center;\'>🛏️ Room.png Image</div>'">
-    </div>
-
-    <!-- 7. PULSANTE PER IL CAPITOLO SUCCESSIVO -->
-    <a href="chapter2.html" class="next-btn">NEXT CHAPTER &rarr;</a>
+    <!-- 8. BOTTONE INDIETRO -->
+    <a href="shrines.html" class="back-btn">&larr; BACK TO SHRINES / HOME</a>
 
   </div>
 
