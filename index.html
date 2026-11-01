@@ -68,7 +68,7 @@
       width: 100%;
       height: auto;
       display: block;
-      filter: drop-shadow(3px 3px 0px #111111);
+      filter: drop-shadow(3px 3px 0px #2b1d0c);
       transition: transform 0.3s ease;
     }
 
@@ -163,7 +163,7 @@
       background: #fcf8ee;
     }
 
-    /* COPERTINE E AUTORI LIBERI (SENZA CONTENITORI BIANCHI) */
+    /* COPERTINE E AUTORI LIBERI */
     .series-covers-flex {
       display: flex;
       justify-content: center;
@@ -317,24 +317,27 @@
       border: none;
     }
 
-    /* LISTA DEI PERSONAGGI LIBERA / SEPARATA SOTTO */
-    .standalone-char-section {
-      display: flex;
-      flex-direction: column;
-      gap: 10px;
+    /* SCATOLA DEDICATA AI PERSONAGGI (COME VOLEVI TU!) */
+    .characters-section {
+      background: #fbf5e6;
+      border: 3px solid #111111;
+      border-radius: 14px;
+      padding: 18px 22px;
+      box-shadow: 5px 5px 0px #111111;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
       margin-top: 5px;
     }
 
-    .standalone-char-title {
-      font-size: 0.9rem;
-      font-weight: 800;
-      color: #111;
+    .characters-section:hover {
+      transform: translateY(-4px);
+      box-shadow: 8px 8px 0px #111111;
     }
 
     .characters-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(85px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(90px, 1fr));
       gap: 12px;
+      margin-top: 10px;
     }
 
     /* MAPPA INTERATTIVA */
@@ -455,7 +458,6 @@
         </audio>
       </div>
 
-      <!-- Tre copertine senza rettangolo di contenimento -->
       <div class="series-covers-flex rot-right">
         <a href="#aang-series" class="standalone-card">
           <div class="standalone-img-box"><img src="aang-cover.jpg" alt="Aang" onerror="this.parentElement.innerHTML='<b>AANG</b>'"></div>
@@ -480,7 +482,7 @@
         <p>Un franchise d'animazione acclamato in tutto il mondo che esplora il dominio dei quattro elementi, creato originariamente da Michael Dante DiMartino e Bryan Konietzko.</p>
       </div>
 
-      <!-- 4. AUTORI LIBERI (SENZA SCHEDA BIANCA SOTTO) -->
+      <!-- 4. AUTORI LIBERI -->
       <div class="series-covers-flex rot-right" style="justify-content: center;">
         <div class="standalone-card">
           <div class="standalone-img-box" style="aspect-ratio: 1/1;"><img src="creator1.jpg" alt="Michael Dante DiMartino" onerror="this.parentElement.innerText='DiMartino'"></div>
@@ -495,7 +497,6 @@
       <!-- ================= 5. PRIMA SERIE: AANG ================= -->
       <div id="aang-series" style="scroll-margin-top: 20px;"></div>
       
-      <!-- Sopra: Poster e Trailer a sinistra, Testo a destra -->
       <div class="series-top-grid rot-left">
         <div class="left-column-stack">
           <div class="scrapbook-element">
@@ -511,9 +512,9 @@
         </div>
       </div>
 
-      <!-- Sotto: Personaggi completamente separati -->
-      <div class="standalone-char-section rot-right">
-        <div class="standalone-char-title">Personaggi Principali (Aang):</div>
+      <!-- Scatola dedicata ai personaggi di Aang -->
+      <div class="characters-section rot-right">
+        <p style="font-size: 0.9rem; font-weight: 800; color: #111; margin-bottom: 5px;">Personaggi Principali (Aang):</p>
         <div class="characters-grid">
           <div class="standalone-card"><div class="standalone-img-box" style="aspect-ratio: 1/1;"><img src="aang-head.jpg" onerror="this.parentElement.innerText='Aang'"></div><div class="standalone-label">Aang</div></div>
           <div class="standalone-card"><div class="standalone-img-box" style="aspect-ratio: 1/1;"><img src="katara-head.jpg" onerror="this.parentElement.innerText='Katara'"></div><div class="standalone-label">Katara</div></div>
@@ -540,8 +541,9 @@
         </div>
       </div>
 
-      <div class="standalone-char-section rot-left">
-        <div class="standalone-char-title">Personaggi Principali (Korra):</div>
+      <!-- Scatola dedicata ai personaggi di Korra -->
+      <div class="characters-section rot-left">
+        <p style="font-size: 0.9rem; font-weight: 800; color: #111; margin-bottom: 5px;">Personaggi Principali (Korra):</p>
         <div class="characters-grid">
           <div class="standalone-card"><div class="standalone-img-box" style="aspect-ratio: 1/1;"><img src="korra-head.jpg" onerror="this.parentElement.innerText='Korra'"></div><div class="standalone-label">Korra</div></div>
           <div class="standalone-card"><div class="standalone-img-box" style="aspect-ratio: 1/1;"><img src="mako-head.jpg" onerror="this.parentElement.innerText='Mako'"></div><div class="standalone-label">Mako</div></div>
@@ -568,8 +570,9 @@
         </div>
       </div>
 
-      <div class="standalone-char-section rot-right">
-        <div class="standalone-char-title">Personaggi Principali (Seven Havens):</div>
+      <!-- Scatola dedicata ai personaggi di Seven Havens -->
+      <div class="characters-section rot-right">
+        <p style="font-size: 0.9rem; font-weight: 800; color: #111; margin-bottom: 5px;">Personaggi Principali (Seven Havens):</p>
         <div class="characters-grid">
           <div class="standalone-card"><div class="standalone-img-box" style="aspect-ratio: 1/1;"><img src="daemin-head.jpg" onerror="this.parentElement.innerText='Daemin'"></div><div class="standalone-label">Daemin</div></div>
           <div class="standalone-card"><div class="standalone-img-box" style="aspect-ratio: 1/1;"><img src="jae-head.jpg" onerror="this.parentElement.innerText='Jae'"></div><div class="standalone-label">Jae</div></div>
@@ -588,15 +591,15 @@
         <a href="URL_DELLA_MAPPA_INTERATTIVA" target="_blank" class="map-link-btn">Apri la Mappa Interattiva &rarr;</a>
       </div>
 
-      <!-- ================= 9. GALLERIA & FANART ================= -->
+      <!-- ================= 9. GALLERIA & FANART (Con i tuoi nuovi sticker!) ================= -->
       <div class="diary-paper rot-right">
         <h2>Galleria d'Arte & Fanart 🎨</h2>
         <p>Una raccolta speciale di illustrazioni e fan art dedicate ai personaggi e alle ambientazioni.</p>
       </div>
 
       <div class="bottom-gallery-grid">
-        <div class="scrapbook-element rot-left"><img src="art-1.jpg" alt="Art 1" onerror="this.parentElement.innerHTML='<b>Art 1</b>'"></div>
-        <div class="scrapbook-element rot-right"><img src="art-2.jpg" alt="Art 2" onerror="this.parentElement.innerHTML='<b>Art 2</b>'"></div>
+        <div class="scrapbook-element rot-left"><img src="1000080772.png" alt="Fanart Ventaglio" onerror="this.parentElement.innerHTML='<b>Art 1</b>'"></div>
+        <div class="scrapbook-element rot-right"><img src="1000080770.jpg" alt="Spirito Blu Mask" onerror="this.parentElement.innerHTML='<b>Art 2</b>'"></div>
         <div class="scrapbook-element rot-left"><img src="art-3.jpg" alt="Art 3" onerror="this.parentElement.innerHTML='<b>Art 3</b>'"></div>
         <div class="scrapbook-element rot-right"><img src="art-4.jpg" alt="Art 4" onerror="this.parentElement.innerHTML='<b>Art 4</b>'"></div>
       </div>
