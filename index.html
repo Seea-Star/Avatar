@@ -76,7 +76,7 @@
       transform: scale(1.03);
     }
 
-    /* HEADER SUPERIORE: PLAYER + 3 COPERTINE LIBERE CLICCABILI */
+    /* HEADER SUPERIORE: PLAYER + 3 COPERTINE */
     .header-top-grid {
       display: grid;
       grid-template-columns: 1fr;
@@ -163,7 +163,7 @@
       background: #fcf8ee;
     }
 
-    /* COPERTINE E AUTORI LIBERI */
+    /* COPERTINE E AUTORI LIBERI (PROPORZIONI NATURALI NIENTE SCHIACCIamenti) */
     .series-covers-flex {
       display: flex;
       justify-content: center;
@@ -177,7 +177,7 @@
       align-items: center;
       text-decoration: none;
       gap: 6px;
-      width: 110px;
+      width: 100px;
       transition: transform 0.2s ease;
     }
 
@@ -187,7 +187,6 @@
 
     .standalone-img-box {
       width: 100%;
-      aspect-ratio: 3/4;
       background: #fff;
       border: 3px solid #111;
       border-radius: 12px;
@@ -198,10 +197,12 @@
       justify-content: center;
     }
 
+    /* IMMAGINE NATURALE SENZA FORZATURE */
     .standalone-img-box img {
       width: 100%;
-      height: 100%;
-      object-fit: cover;
+      height: auto;
+      display: block;
+      object-fit: contain;
     }
 
     .standalone-label {
@@ -276,6 +277,7 @@
       gap: 20px;
     }
 
+    /* POSTER NATIVO SENZA TAGLI O SCHIACCIAMENTI */
     .scrapbook-element {
       display: flex;
       justify-content: center;
@@ -296,7 +298,6 @@
       height: auto;
       display: block;
       background: #ffffff;
-      transition: box-shadow 0.3s ease;
     }
 
     /* TRAILER YOUTUBE */
@@ -317,7 +318,7 @@
       border: none;
     }
 
-    /* SCATOLA DEDICATA AI PERSONAGGI */
+    /* SCATOLA DEDICATA AI PERSONAGGI (BILANCIATA A 2 COLONNE SU CELLULARE) */
     .characters-section {
       background: #fbf5e6;
       border: 3px solid #111111;
@@ -333,11 +334,18 @@
       box-shadow: 8px 8px 0px #111111;
     }
 
+    /* GRIGLIA PERSONAGGI: 2 COLONNE SU MOBILE, PIÙ AMPIA SU DESKTOP */
     .characters-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(90px, 1fr));
-      gap: 12px;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 15px;
       margin-top: 10px;
+    }
+
+    @media screen and (min-width: 600px) {
+      .characters-grid {
+        grid-template-columns: repeat(4, 1fr);
+      }
     }
 
     /* MAPPA INTERATTIVA */
@@ -444,7 +452,7 @@
       <img src="https://raw.githubusercontent.com/Seea-Star/Avatar/refs/heads/main/Logo.png" alt="Avatar Franchise Logo" class="logo-img">
     </header>
 
-    <!-- 2. PLAYER MUSICALE + COPERTINE CLICCABILI AGGIORNATE -->
+    <!-- 2. PLAYER MUSICALE + COPERTINE -->
     <div class="header-top-grid">
       <div class="cosmic-player rot-left">
         <div class="cosmic-player-inner">
@@ -485,11 +493,11 @@
       <!-- 4. AUTORI LIBERI -->
       <div class="series-covers-flex rot-right" style="justify-content: center;">
         <div class="standalone-card">
-          <div class="standalone-img-box" style="aspect-ratio: 1/1;"><img src="creator1.jpg" alt="Michael Dante DiMartino" onerror="this.parentElement.innerText='DiMartino'"></div>
+          <div class="standalone-img-box"><img src="creator1.jpg" alt="Michael Dante DiMartino" onerror="this.parentElement.innerText='DiMartino'"></div>
           <div class="standalone-label">M. D. DiMartino</div>
         </div>
         <div class="standalone-card">
-          <div class="standalone-img-box" style="aspect-ratio: 1/1;"><img src="creator2.jpg" alt="Bryan Konietzko" onerror="this.parentElement.innerText='Konietzko'"></div>
+          <div class="standalone-img-box"><img src="creator2.jpg" alt="Bryan Konietzko" onerror="this.parentElement.innerText='Konietzko'"></div>
           <div class="standalone-label">B. Konietzko</div>
         </div>
       </div>
@@ -515,10 +523,10 @@
       <div class="characters-section rot-right">
         <p style="font-size: 0.9rem; font-weight: 800; color: #111; margin-bottom: 5px;">Personaggi Principali (Aang):</p>
         <div class="characters-grid">
-          <div class="standalone-card"><div class="standalone-img-box" style="aspect-ratio: 1/1;"><img src="aang-head.jpg" onerror="this.parentElement.innerText='Aang'"></div><div class="standalone-label">Aang</div></div>
-          <div class="standalone-card"><div class="standalone-img-box" style="aspect-ratio: 1/1;"><img src="katara-head.jpg" onerror="this.parentElement.innerText='Katara'"></div><div class="standalone-label">Katara</div></div>
-          <div class="standalone-card"><div class="standalone-img-box" style="aspect-ratio: 1/1;"><img src="sokka-head.jpg" onerror="this.parentElement.innerText='Sokka'"></div><div class="standalone-label">Sokka</div></div>
-          <div class="standalone-card"><div class="standalone-img-box" style="aspect-ratio: 1/1;"><img src="toph-head.jpg" onerror="this.parentElement.innerText='Toph'"></div><div class="standalone-label">Toph</div></div>
+          <div class="standalone-card"><div class="standalone-img-box"><img src="aang-head.jpg" onerror="this.parentElement.innerText='Aang'"></div><div class="standalone-label">Aang</div></div>
+          <div class="standalone-card"><div class="standalone-img-box"><img src="katara-head.jpg" onerror="this.parentElement.innerText='Katara'"></div><div class="standalone-label">Katara</div></div>
+          <div class="standalone-card"><div class="standalone-img-box"><img src="sokka-head.jpg" onerror="this.parentElement.innerText='Sokka'"></div><div class="standalone-label">Sokka</div></div>
+          <div class="standalone-card"><div class="standalone-img-box"><img src="toph-head.jpg" onerror="this.parentElement.innerText='Toph'"></div><div class="standalone-label">Toph</div></div>
         </div>
       </div>
 
@@ -543,10 +551,10 @@
       <div class="characters-section rot-left">
         <p style="font-size: 0.9rem; font-weight: 800; color: #111; margin-bottom: 5px;">Personaggi Principali (Korra):</p>
         <div class="characters-grid">
-          <div class="standalone-card"><div class="standalone-img-box" style="aspect-ratio: 1/1;"><img src="korra-head.jpg" onerror="this.parentElement.innerText='Korra'"></div><div class="standalone-label">Korra</div></div>
-          <div class="standalone-card"><div class="standalone-img-box" style="aspect-ratio: 1/1;"><img src="mako-head.jpg" onerror="this.parentElement.innerText='Mako'"></div><div class="standalone-label">Mako</div></div>
-          <div class="standalone-card"><div class="standalone-img-box" style="aspect-ratio: 1/1;"><img src="bolin-head.jpg" onerror="this.parentElement.innerText='Bolin'"></div><div class="standalone-label">Bolin</div></div>
-          <div class="standalone-card"><div class="standalone-img-box" style="aspect-ratio: 1/1;"><img src="asami-head.jpg" onerror="this.parentElement.innerText='Asami'"></div><div class="standalone-label">Asami</div></div>
+          <div class="standalone-card"><div class="standalone-img-box"><img src="korra-head.jpg" onerror="this.parentElement.innerText='Korra'"></div><div class="standalone-label">Korra</div></div>
+          <div class="standalone-card"><div class="standalone-img-box"><img src="mako-head.jpg" onerror="this.parentElement.innerText='Mako'"></div><div class="standalone-label">Mako</div></div>
+          <div class="standalone-card"><div class="standalone-img-box"><img src="bolin-head.jpg" onerror="this.parentElement.innerText='Bolin'"></div><div class="standalone-label">Bolin</div></div>
+          <div class="standalone-card"><div class="standalone-img-box"><img src="asami-head.jpg" onerror="this.parentElement.innerText='Asami'"></div><div class="standalone-label">Asami</div></div>
         </div>
       </div>
 
@@ -571,14 +579,14 @@
       <div class="characters-section rot-right">
         <p style="font-size: 0.9rem; font-weight: 800; color: #111; margin-bottom: 5px;">Personaggi Principali (Seven Havens):</p>
         <div class="characters-grid">
-          <div class="standalone-card"><div class="standalone-img-box" style="aspect-ratio: 1/1;"><img src="daemin-head.jpg" onerror="this.parentElement.innerText='Daemin'"></div><div class="standalone-label">Daemin</div></div>
-          <div class="standalone-card"><div class="standalone-img-box" style="aspect-ratio: 1/1;"><img src="jae-head.jpg" onerror="this.parentElement.innerText='Jae'"></div><div class="standalone-label">Jae</div></div>
-          <div class="standalone-card"><div class="standalone-img-box" style="aspect-ratio: 1/1;"><img src="uki-head.jpg" onerror="this.parentElement.innerText='Uki'"></div><div class="standalone-label">Uki</div></div>
-          <div class="standalone-card"><div class="standalone-img-box" style="aspect-ratio: 1/1;"><img src="lan-head.jpg" onerror="this.parentElement.innerText='Lan'"></div><div class="standalone-label">Lan</div></div>
+          <div class="standalone-card"><div class="standalone-img-box"><img src="daemin-head.jpg" onerror="this.parentElement.innerText='Daemin'"></div><div class="standalone-label">Daemin</div></div>
+          <div class="standalone-card"><div class="standalone-img-box"><img src="jae-head.jpg" onerror="this.parentElement.innerText='Jae'"></div><div class="standalone-label">Jae</div></div>
+          <div class="standalone-card"><div class="standalone-img-box"><img src="uki-head.jpg" onerror="this.parentElement.innerText='Uki'"></div><div class="standalone-label">Uki</div></div>
+          <div class="standalone-card"><div class="standalone-img-box"><img src="lan-head.jpg" onerror="this.parentElement.innerText='Lan'"></div><div class="standalone-label">Lan</div></div>
         </div>
       </div>
 
-      <!-- ================= 8. MAPPA INTERATTIVA CON LINK UFFICIALE ================= -->
+      <!-- ================= 8. MAPPA INTERATTIVA ================= -->
       <div class="interactive-map-section rot-left">
         <h2 style="font-size: 1.1rem; font-weight: 800;">🌍 Mappa Interattiva del Mondo</h2>
         <p style="font-size: 0.85rem; text-align: center; font-weight: 700;">Esplora i territori, le nazioni e i luoghi storici dell'universo di Avatar in modo interattivo.</p>
