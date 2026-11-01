@@ -172,3 +172,517 @@
     }
 
     .cover-link {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-decoration: none;
+      gap: 6px;
+      width: 100px;
+      transition: transform 0.2s ease;
+    }
+
+    .cover-link:hover {
+      transform: translateY(-4px) scale(1.03);
+    }
+
+    .cover-box {
+      width: 100%;
+      aspect-ratio: 3/4;
+      background: #fff;
+      border: 3px solid #111;
+      border-radius: 10px;
+      box-shadow: 4px 4px 0px #111;
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .cover-box img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .cover-label {
+      background: #ffffff;
+      border: 2px solid #111;
+      border-radius: 6px;
+      padding: 3px 6px;
+      font-size: 0.7rem;
+      font-weight: 800;
+      color: #111;
+      box-shadow: 2px 2px 0px #111;
+      text-align: center;
+      width: 100%;
+    }
+
+    /* BLOCCHI DI TESTO STILE CARTA ANTICA */
+    .diary-paper {
+      background: #fbf5e6;
+      border: 3px solid #111111;
+      border-radius: 14px;
+      padding: 22px 25px;
+      box-shadow: 5px 5px 0px #111111;
+      position: relative;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .diary-paper:hover {
+      transform: translateY(-5px) scale(1.01);
+      box-shadow: 8px 8px 0px #111111;
+    }
+
+    .diary-paper h2 {
+      font-size: 1.2rem;
+      font-weight: 800;
+      margin-bottom: 10px;
+      color: #111111;
+      border-bottom: 2px dashed #111111;
+      padding-bottom: 5px;
+    }
+
+    .diary-paper p {
+      font-size: 0.9rem;
+      font-weight: 700;
+      line-height: 1.7;
+      color: #222222;
+    }
+
+    /* SEZIONE PERSONAGGI / AUTORI (SENZA SFONDO BIANCO GENERALE) */
+    .characters-section {
+      background: transparent;
+      padding: 5px 0;
+    }
+
+    .characters-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(90px, 1fr));
+      gap: 10px;
+      margin-top: 10px;
+    }
+
+    .character-card {
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+      align-items: center;
+      transition: transform 0.2s ease;
+    }
+
+    .character-card:hover {
+      transform: translateY(-4px) scale(1.05);
+    }
+
+    .char-img-box {
+      background: #ffffff;
+      border: 3px solid #111111;
+      border-radius: 12px;
+      width: 100%;
+      max-width: 100px;
+      box-shadow: 3px 3px 0px #111111;
+      overflow: hidden;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      aspect-ratio: 1/1;
+    }
+
+    .char-img-box img {
+      width: 100%;
+      height: 100%;
+      display: block;
+      object-fit: cover;
+    }
+
+    .char-name-box {
+      background: #ffffff;
+      border: 2px solid #111111;
+      border-radius: 8px;
+      padding: 4px 6px;
+      text-align: center;
+      font-size: 0.7rem;
+      font-weight: 800;
+      color: #111;
+      box-shadow: 2px 2px 0px #111;
+      width: 100%;
+    }
+
+    .scrapbox-container {
+      display: flex;
+      flex-direction: column;
+      gap: 30px;
+      padding: 10px 0;
+    }
+
+    /* STRUTTURA SERIE: SINISTRA (POSTER + YOUTUBE) / DESTRA (TESTO) */
+    .series-main-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 20px;
+      align-items: start;
+    }
+
+    @media screen and (min-width: 768px) {
+      .series-main-grid {
+        grid-template-columns: 280px 1fr;
+      }
+    }
+
+    .left-column-stack {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+
+    .scrapbook-element {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 100%;
+      transition: transform 0.3s ease;
+    }
+
+    .scrapbook-element:hover {
+      transform: translateY(-6px) scale(1.02);
+    }
+
+    .scrapbook-element img {
+      border: 3px solid #111111;
+      border-radius: 14px;
+      box-shadow: 4px 4px 0px #111111;
+      width: 100%;
+      height: auto;
+      display: block;
+      background: #ffffff;
+      transition: box-shadow 0.3s ease;
+    }
+
+    .scrapbook-element:hover img {
+      box-shadow: 7px 7px 0px #111111;
+    }
+
+    /* VIDEO YOUTUBE STESSE DIMENSIONI DEL POSTER */
+    .video-box {
+      background: #ffffff;
+      border: 3px solid #111111;
+      border-radius: 14px;
+      box-shadow: 4px 4px 0px #111111;
+      overflow: hidden;
+      width: 100%;
+      aspect-ratio: 16/9;
+      position: relative;
+    }
+
+    .video-box iframe {
+      width: 100%;
+      height: 100%;
+      border: none;
+    }
+
+    /* CONTENITORE COMPLETO DI UNA SERIE (TESTO/POSTER SOPRA, PERSONAGGI SOTTO) */
+    .series-container-block {
+      background: #fbf5e6;
+      border: 3px solid #111111;
+      border-radius: 14px;
+      padding: 22px 25px;
+      box-shadow: 5px 5px 0px #111111;
+      display: flex;
+      flex-direction: column;
+      gap: 25px;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .series-container-block:hover {
+      transform: translateY(-4px);
+      box-shadow: 8px 8px 0px #111111;
+    }
+
+    /* SEZIONE MAPPA INTERATTIVA */
+    .interactive-map-section {
+      background: #fbf5e6;
+      border: 3px solid #111111;
+      border-radius: 14px;
+      padding: 22px 25px;
+      box-shadow: 5px 5px 0px #111111;
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+      align-items: center;
+      transition: transform 0.3s ease;
+    }
+
+    .interactive-map-section:hover {
+      transform: translateY(-4px);
+      box-shadow: 8px 8px 0px #111111;
+    }
+
+    .map-preview-box {
+      width: 100%;
+      max-width: 500px;
+      background: #fff;
+      border: 3px solid #111;
+      border-radius: 12px;
+      box-shadow: 3px 3px 0px #111;
+      overflow: hidden;
+    }
+
+    .map-preview-box img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    .map-link-btn {
+      display: inline-block;
+      background: #ffffff;
+      color: #111111;
+      padding: 10px 18px;
+      border-radius: 10px;
+      text-decoration: none;
+      font-weight: 800;
+      font-size: 0.8rem;
+      border: 2px solid #111;
+      box-shadow: 3px 3px 0px #111;
+      transition: transform 0.15s ease;
+    }
+
+    .map-link-btn:hover {
+      transform: translateY(-2px);
+      background: #fff;
+    }
+
+    /* GALLERIA IN BASSO */
+    .bottom-gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 15px;
+      align-items: center;
+    }
+
+    @media screen and (min-width: 768px) {
+      .bottom-gallery-grid {
+        grid-template-columns: repeat(4, 1fr);
+        gap: 20px;
+      }
+    }
+
+    .rot-left { transform: rotate(-1.5deg); }
+    .rot-right { transform: rotate(1.5deg); }
+
+    .back-btn {
+      display: inline-block;
+      background: #fbf5e6;
+      color: #111111;
+      padding: 12px 22px;
+      border-radius: 14px;
+      text-decoration: none;
+      font-weight: 800;
+      font-size: 0.85rem;
+      text-align: center;
+      border: 3px solid #111;
+      box-shadow: 4px 4px 0px #111;
+      align-self: center;
+      margin-top: 15px;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .back-btn:hover {
+      transform: translateY(-3px);
+      box-shadow: 6px 6px 0px #111;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="site-wrapper">
+
+    <!-- 1. LOGO PRINCIPALE AGGIORNATO -->
+    <header class="top-banner">
+      <img src="https://raw.githubusercontent.com/Seea-Star/Avatar/refs/heads/main/Logo.png" alt="Avatar Franchise Logo" class="logo-img">
+    </header>
+
+    <!-- 2. PLAYER MUSICALE + COPERTINE LIBERE CLICCABILI -->
+    <div class="header-top-grid">
+      <div class="cosmic-player rot-left">
+        <div class="cosmic-player-inner">
+          <div class="player-screen">Avatar Soundtrack</div>
+          <div class="player-controls">
+            <button class="player-btn" title="Play/Pause" onclick="let a=document.getElementById('bg-audio'); a.paused ? a.play() : a.pause();">♫</button>
+          </div>
+        </div>
+        <audio id="bg-audio" loop>
+          <source src="https://raw.githubusercontent.com/Seea-Star/Howl/refs/heads/main/Joe%20Hisaishi%20-%20Merry-Go-Round%20of%20Life%20(from%20Howl%E2%80%99s%20Moving%20Castle).mp3" type="audio/mpeg">
+        </audio>
+      </div>
+
+      <!-- Copertine libere senza box bianco di gruppo -->
+      <div class="series-covers-flex rot-right">
+        <a href="#aang-series" class="cover-link">
+          <div class="cover-box"><img src="aang-cover.jpg" alt="Aang" onerror="this.parentElement.innerHTML='<b>AANG</b>'"></div>
+          <div class="cover-label">Aang</div>
+        </a>
+        <a href="#korra-series" class="cover-link">
+          <div class="cover-box"><img src="korra-cover.jpg" alt="Korra" onerror="this.parentElement.innerHTML='<b>KORRA</b>'"></div>
+          <div class="cover-label">Korra</div>
+        </a>
+        <a href="#seven-havens-series" class="cover-link">
+          <div class="cover-box"><img src="seven-havens-cover.jpg" alt="Seven Havens" onerror="this.parentElement.innerHTML='<b>7 HAVENS</b>'"></div>
+          <div class="cover-label">Seven Havens</div>
+        </a>
+      </div>
+    </div>
+
+    <div class="scrapbox-container">
+
+      <!-- 3. INTRODUZIONE GENERALE (WIKIPEDIA STYLE) -->
+      <div class="diary-paper rot-left">
+        <h2>L'Universo di Avatar ✨</h2>
+        <p>Un franchise d'animazione acclamato in tutto il mondo che esplora il dominio dei quattro elementi, creato originariamente da Michael Dante DiMartino e Bryan Konietzko[span_0](start_span)[span_0](end_span).</p>
+      </div>
+
+      <!-- 4. SPAZIO IMMAGINI DEGLI AUTORI (SENZA BOX BIANCO GENERALE) -->
+      <div class="diary-paper rot-right">
+        <h2>I Creatori</h2>
+        <div class="characters-section">
+          <div class="characters-grid" style="grid-template-columns: repeat(2, minmax(110px, 140px)); justify-content: center;">
+            <div class="character-card">
+              <div class="char-img-box"><img src="creator1.jpg" alt="Michael Dante DiMartino" onerror="this.parentElement.innerText='DiMartino'"></div>
+              <div class="char-name-box">M. D. DiMartino</div>
+            </div>
+            <div class="character-card">
+              <div class="char-img-box"><img src="creator2.jpg" alt="Bryan Konietzko" onerror="this.parentElement.innerText='Konietzko'"></div>
+              <div class="char-name-box">B. Konietzko</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ================= 5. PRIMA SERIE: AANG ================= -->
+      <div id="aang-series" style="scroll-margin-top: 20px;"></div>
+      
+      <div class="series-container-block rot-left">
+        <div class="series-main-grid">
+          <!-- Sinistra: Poster e Trailer -->
+          <div class="left-column-stack">
+            <div class="scrapbook-element">
+              <img src="aang-poster.jpg" alt="Aang Poster" onerror="this.parentElement.innerHTML='<div style=\'background:#fff; border:3px solid #111; padding:60px 10px; border-radius:14px; font-weight:bold; text-align:center;\'>📜 Copertina Aang</div>'">
+            </div>
+            <div class="video-box">
+              <iframe src="https://www.youtube.com/embed/d1EnW4kn1gg" title="Aang Trailer" allowfullscreen></iframe>
+            </div>
+          </div>
+          <!-- Destra: Testo Storia -->
+          <div>
+            <h2>1. Avatar: La Leggenda di Aang</h2>
+            <p>Il giovane Aang si risveglia dopo un secolo per compiere il suo destino: padroneggiare tutti gli elementi e riportare la pace nel mondo insieme ai suoi compagni.</p>
+          </div>
+        </div>
+        <!-- Sotto a tutto il blocco: Personaggi -->
+        <div class="characters-section">
+          <p style="font-size: 0.85rem; font-weight: 800; margin-bottom: 8px;">Personaggi Principali:</p>
+          <div class="characters-grid">
+            <div class="character-card"><div class="char-img-box"><img src="aang-head.jpg" onerror="this.parentElement.innerText='Aang'"></div><div class="char-name-box">Aang</div></div>
+            <div class="character-card"><div class="char-img-box"><img src="katara-head.jpg" onerror="this.parentElement.innerText='Katara'"></div><div class="char-name-box">Katara</div></div>
+            <div class="character-card"><div class="char-img-box"><img src="sokka-head.jpg" onerror="this.parentElement.innerText='Sokka'"></div><div class="char-name-box">Sokka</div></div>
+            <div class="character-card"><div class="char-img-box"><img src="toph-head.jpg" onerror="this.parentElement.innerText='Toph'"></div><div class="char-name-box">Toph</div></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ================= 6. SECONDA SERIE: KORRA ================= -->
+      <div id="korra-series" style="scroll-margin-top: 20px;"></div>
+
+      <div class="series-container-block rot-right">
+        <div class="series-main-grid">
+          <!-- Sinistra: Poster e Trailer -->
+          <div class="left-column-stack">
+            <div class="scrapbook-element">
+              <img src="korra-poster.jpg" alt="Korra Poster" onerror="this.parentElement.innerHTML='<div style=\'background:#fff; border:3px solid #111; padding:60px 10px; border-radius:14px; font-weight:bold; text-align:center;\'>📜 Copertina Korra</div>'">
+            </div>
+            <div class="video-box">
+              <iframe src="https://www.youtube.com/embed/jmsT63bgFP8" title="Korra Trailer" allowfullscreen></iframe>
+            </div>
+          </div>
+          <!-- Destra: Testo Storia -->
+          <div>
+            <h2>2. La Leggenda di Korra</h2>
+            <p>Settant'anni dopo Aang, la nuova Avatar Korra affronta sfide in una metropoli moderna e in rapido cambiamento spirituale e tecnologico.</p>
+          </div>
+        </div>
+        <!-- Sotto a tutto il blocco: Personaggi -->
+        <div class="characters-section">
+          <p style="font-size: 0.85rem; font-weight: 800; margin-bottom: 8px;">Personaggi Principali:</p>
+          <div class="characters-grid">
+            <div class="character-card"><div class="char-img-box"><img src="korra-head.jpg" onerror="this.parentElement.innerText='Korra'"></div><div class="char-name-box">Korra</div></div>
+            <div class="character-card"><div class="char-img-box"><img src="mako-head.jpg" onerror="this.parentElement.innerText='Mako'"></div><div class="char-name-box">Mako</div></div>
+            <div class="character-card"><div class="char-img-box"><img src="bolin-head.jpg" onerror="this.parentElement.innerText='Bolin'"></div><div class="char-name-box">Bolin</div></div>
+            <div class="character-card"><div class="char-img-box"><img src="asami-head.jpg" onerror="this.parentElement.innerText='Asami'"></div><div class="char-name-box">Asami</div></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ================= 7. TERZA SERIE: SEVEN HAVENS ================= -->
+      <div id="seven-havens-series" style="scroll-margin-top: 20px;"></div>
+
+      <div class="series-container-block rot-left">
+        <div class="series-main-grid">
+          <!-- Sinistra: Poster e Trailer -->
+          <div class="left-column-stack">
+            <div class="scrapbook-element">
+              <img src="seven-havens-poster.jpg" alt="Seven Havens Poster" onerror="this.parentElement.innerHTML='<div style=\'background:#fff; border:3px solid #111; padding:60px 10px; border-radius:14px; font-weight:bold; text-align:center;\'>📜 Copertina Seven Havens</div>'">
+            </div>
+            <div class="video-box">
+              <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ" title="Seven Havens Trailer" allowfullscreen></iframe>
+            </div>
+          </div>
+          <!-- Destra: Testo Storia -->
+          <div>
+            <h2>3. Avatar: Seven Havens</h2>
+            <p>Un capitolo di nuova generazione dove le gemelle Pavi e Lisha e il coraggioso Daemin esplorano nuove terre e misteri del mondo degli elementi[span_1](start_span)[span_1](end_span).</p>
+          </div>
+        </div>
+        <!-- Sotto a tutto il blocco: Personaggi -->
+        <div class="characters-section">
+          <p style="font-size: 0.85rem; font-weight: 800; margin-bottom: 8px;">Personaggi Principali:</p>
+          <div class="characters-grid">
+            <div class="character-card"><div class="char-img-box"><img src="daemin-head.jpg" onerror="this.parentElement.innerText='Daemin'"></div><div class="char-name-box">Daemin</div></div>
+            <div class="character-card"><div class="char-img-box"><img src="jae-head.jpg" onerror="this.parentElement.innerText='Jae'"></div><div class="char-name-box">Jae</div></div>
+            <div class="character-card"><div class="char-img-box"><img src="uki-head.jpg" onerror="this.parentElement.innerText='Uki'"></div><div class="char-name-box">Uki</div></div>
+            <div class="character-card"><div class="char-img-box"><img src="lan-head.jpg" onerror="this.parentElement.innerText='Lan'"></div><div class="char-name-box">Lan</div></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ================= 8. MAPPA INTERATTIVA (BLOCCO ARANCIONE) ================= -->
+      <div class="interactive-map-section rot-right">
+        <h2 style="font-size: 1.1rem; font-weight: 800;">🌍 Mappa Interattiva del Mondo</h2>
+        <p style="font-size: 0.85rem; text-align: center; font-weight: 700;">Esplora i territori, le nazioni e i luoghi storici dell'universo di Avatar in modo interattivo.</p>
+        <div class="map-preview-box">
+          <img src="map-preview.jpg" alt="Map Preview" onerror="this.parentElement.innerHTML='<div style=\'padding:40px; text-align:center; font-weight:bold;\'>🗺️ Anteprima Mappa Interattiva</div>'">
+        </div>
+        <a href="URL_DELLA_MAPPA_INTERATTIVA" target="_blank" class="map-link-btn">Apri la Mappa Interattiva &rarr;</a>
+      </div>
+
+      <!-- ================= 9. GALLERIA & FANART ================= -->
+      <div class="diary-paper rot-left">
+        <h2>Galleria d'Arte & Fanart 🎨</h2>
+        <p>Una raccolta speciale di illustrazioni e fan art dedicate ai personaggi e alle ambientazioni.</p>
+      </div>
+
+      <div class="bottom-gallery-grid">
+        <div class="scrapbook-element rot-left"><img src="art-1.jpg" alt="Art 1" onerror="this.parentElement.innerHTML='<b>Art 1</b>'"></div>
+        <div class="scrapbook-element rot-right"><img src="art-2.jpg" alt="Art 2" onerror="this.parentElement.innerHTML='<b>Art 2</b>'"></div>
+        <div class="scrapbook-element rot-left"><img src="art-3.jpg" alt="Art 3" onerror="this.parentElement.innerHTML='<b>Art 3</b>'"></div>
+        <div class="scrapbook-element rot-right"><img src="art-4.jpg" alt="Art 4" onerror="this.parentElement.innerHTML='<b>Art 4</b>'"></div>
+      </div>
+
+    </div>
+
+    <!-- 10. BOTTONE DI RITORNO -->
+    <a href="shrines.html" class="back-btn">&larr; BACK TO SHRINES / HOME</a>
+
+  </div>
+
+</body>
+</html>
